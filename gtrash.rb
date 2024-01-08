@@ -9,19 +9,17 @@ class Gtrash < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Darwin_x86_64
- # Only include binary.tar.gz"
-      sha256 "ada8557b0e6778639c9f0b237c5d9d7b6e2f1a46bab9042e901b2bb9224cae1c"
+    if Hardware::CPU.arm?
+      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Darwin_arm64.tar.gz"
+      sha256 "baf572f6e96729017b3b9e513c95c2c4dc80c31dfbeaf2c0e77821db68fdf189"
 
       def install
         bin.install "gtrash"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Darwin_arm64
- # Only include binary.tar.gz"
-      sha256 "375c1b3e0e01c04b0a0c05fe490f0ec31bdde8fe3e86fd0ed9a0e930f1f90444"
+    if Hardware::CPU.intel?
+      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Darwin_x86_64.tar.gz"
+      sha256 "6772218fb05f36063c3d6c5420c72e2fe39b4c4378a0737aff91babcfe3888f5"
 
       def install
         bin.install "gtrash"
@@ -31,18 +29,16 @@ class Gtrash < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Linux_arm64
- # Only include binary.tar.gz"
-      sha256 "9184e6c0557ef2869b860c54f8f5b7b7e66c64a7813941a4499dd1fa198f506b"
+      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Linux_arm64.tar.gz"
+      sha256 "eef28f73b665624bd1c9fbf23c0c8ba65346c8f6278c4592c960ed26c06d8b7f"
 
       def install
         bin.install "gtrash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Linux_x86_64
- # Only include binary.tar.gz"
-      sha256 "749795d71d9a7dcd803ee94d397e86df890e1759a77f69de21c3634acaf8e7e7"
+      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.1/gtrash_Linux_x86_64.tar.gz"
+      sha256 "b5f924a8b841efcea9704f37b9b23cf9e04f62e5085c0b27fc8f004fad47f110"
 
       def install
         bin.install "gtrash"
