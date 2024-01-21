@@ -11,7 +11,7 @@ class Gtrash < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Darwin_x86_64.tar.gz"
-      sha256 "2340c5bade94ee5fab8d547b54a302e814f2421dc464d3a1d5348e5692bf1ac7"
+      sha256 "e949c1c67fd7f207dea5936c04c6371a11756b2b627fe170513053472b39a3f9"
 
       def install
         bin.install "gtrash"
@@ -19,7 +19,7 @@ class Gtrash < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Darwin_arm64.tar.gz"
-      sha256 "90cfd9b62da86c204f2e09c31d859f0e30f5e16ff5d893f9160198d3e8e77efd"
+      sha256 "9e8753680fb85bb6e13752aac857f994076f7221f57779c8edfb20ca30f3ab2a"
 
       def install
         bin.install "gtrash"
@@ -30,7 +30,7 @@ class Gtrash < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Linux_arm64.tar.gz"
-      sha256 "2b5d032d72ee38d9003ba57c38dc14c0c1ed6fa1be35ad4acfe16a53d89b09a8"
+      sha256 "dde58d0a806752d4d5ce50a284d18e6afc3302318129b3922044e90a34f5f2bd"
 
       def install
         bin.install "gtrash"
@@ -38,7 +38,7 @@ class Gtrash < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Linux_x86_64.tar.gz"
-      sha256 "1101318d63ebfd705df82d8dce9188326009b0ea62924bc4e285b54d19f995b7"
+      sha256 "22fcde544c62894218394f9c696c43e9edea9c1cb4cdc7218d26a54db29e2c9c"
 
       def install
         bin.install "gtrash"
