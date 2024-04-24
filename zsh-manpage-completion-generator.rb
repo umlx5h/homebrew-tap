@@ -5,21 +5,21 @@
 class ZshManpageCompletionGenerator < Formula
   desc "Automatically generate zsh completions from man page"
   homepage "https://github.com/umlx5h/zsh-manpage-completion-generator"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.1/zsh-manpage-completion-generator_Darwin_x86_64.tar.gz"
-      sha256 "80e0247cda791593e538a35a12e45718dae7d6120682101bd7b7200cb02154e9"
+      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.2/zsh-manpage-completion-generator_Darwin_x86_64.tar.gz"
+      sha256 "6201b078ecf16285af8f12bbdf3a8c3b5964307556dc4f5f61760fb66ef9464d"
 
       def install
         bin.install "zsh-manpage-completion-generator"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.1/zsh-manpage-completion-generator_Darwin_arm64.tar.gz"
-      sha256 "b784fbe41dab7037a1c880d0fae3245cd1d5f75c56c1a9469483bd0ca4c8f291"
+      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.2/zsh-manpage-completion-generator_Darwin_arm64.tar.gz"
+      sha256 "d1dd21f8f288a84dca6a5c23b6f7616ffa1e65086130668c1143cecc1b4e9368"
 
       def install
         bin.install "zsh-manpage-completion-generator"
@@ -28,17 +28,17 @@ class ZshManpageCompletionGenerator < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.1/zsh-manpage-completion-generator_Linux_arm64.tar.gz"
-      sha256 "bf93ffc88ebdc67150834124fc231a5141acc39402a7195b12cc26f5b7d7f666"
+    if Hardware::CPU.intel?
+      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.2/zsh-manpage-completion-generator_Linux_x86_64.tar.gz"
+      sha256 "c9561bf319f9360042fa063d002b1f627c32f9f4fe69381c4707929c99b3803f"
 
       def install
         bin.install "zsh-manpage-completion-generator"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.1/zsh-manpage-completion-generator_Linux_x86_64.tar.gz"
-      sha256 "267427b5e7956c2c20cf4cd4374e3eded530dabfd05ce763026a64586458c4a5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/umlx5h/zsh-manpage-completion-generator/releases/download/v1.0.2/zsh-manpage-completion-generator_Linux_arm64.tar.gz"
+      sha256 "b0c4535c972de6616d78e80630ae209c6a2a998f22b2fd7026671981a4d5b6a9"
 
       def install
         bin.install "zsh-manpage-completion-generator"
