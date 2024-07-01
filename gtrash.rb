@@ -5,21 +5,21 @@
 class Gtrash < Formula
   desc "A Trash CLI manager written in Go"
   homepage "https://github.com/umlx5h/gtrash"
-  version "0.0.5"
+  version "0.0.6"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Darwin_x86_64.tar.gz"
-      sha256 "e949c1c67fd7f207dea5936c04c6371a11756b2b627fe170513053472b39a3f9"
+    on_intel do
+      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.6/gtrash_Darwin_x86_64.tar.gz"
+      sha256 "3a3343c35f39407908aa9b5cd0a9445c07b3301a4f5b0813b694ae78d5a1c2d0"
 
       def install
         bin.install "gtrash"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Darwin_arm64.tar.gz"
-      sha256 "9e8753680fb85bb6e13752aac857f994076f7221f57779c8edfb20ca30f3ab2a"
+    on_arm do
+      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.6/gtrash_Darwin_arm64.tar.gz"
+      sha256 "449d6d77550c28c966fb758c2d3070c9fc5ed7ca5bc4921cbaa770fb3b709b47"
 
       def install
         bin.install "gtrash"
@@ -28,20 +28,24 @@ class Gtrash < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Linux_arm64.tar.gz"
-      sha256 "dde58d0a806752d4d5ce50a284d18e6afc3302318129b3922044e90a34f5f2bd"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/umlx5h/gtrash/releases/download/v0.0.6/gtrash_Linux_x86_64.tar.gz"
+        sha256 "40d5560dc3ed34629f198203a6cce39529e413dbcbc48d8ebe1a3b716891d965"
 
-      def install
-        bin.install "gtrash"
+        def install
+          bin.install "gtrash"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/umlx5h/gtrash/releases/download/v0.0.5/gtrash_Linux_x86_64.tar.gz"
-      sha256 "22fcde544c62894218394f9c696c43e9edea9c1cb4cdc7218d26a54db29e2c9c"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/umlx5h/gtrash/releases/download/v0.0.6/gtrash_Linux_arm64.tar.gz"
+        sha256 "6c0c761691227feb2aca7231c92641d7fd9cd93fdd39600be6b446b80b39fc7d"
 
-      def install
-        bin.install "gtrash"
+        def install
+          bin.install "gtrash"
+        end
       end
     end
   end
